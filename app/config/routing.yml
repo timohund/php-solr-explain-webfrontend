@@ -1,0 +1,6 @@
+ts_explain:
+    resource: "@TsExplainBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
