@@ -4,10 +4,34 @@
         <script src="{{ asset('bundles/obhighcharts/js/highcharts/highcharts.js') }}"></script>
         <script src="{{ asset('bundles/obhighcharts/js/highcharts/modules/exporting.js') }}"></script>
         <script type="text/javascript">
-            {{ chart(chart) }}
+            {% for document in documents %}
+                {{ chart(document.chart) }}
+            {% endfor %}
         </script>
+
     </head>
     <body>
-        <div id="linechart" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+        {% for document in documents %}
+            <div>
+                <div class="fieldlist">
+                    <table>
+                    {% for field in document.solrdocument.fields %}
+                        <tr>
+                            <td>{{ field.name }}</td>
+                            <td>{{ field.type }}</td>
+                            <td>{{ field.value }}</td>
+                        </tr>
+                    {% endfor %}
+                    </table>
+
+                </div>
+                <div class="fieldimpacts" id="linechart-{{ document.id }}" style="width: 150px; height: 150px; margin: 0 auto">
+
+                </div>
+                <div class="explain">
+                    {{ document.solrdocument.rawExplainData }}
+                </div>
+            </div>
+        {% endfor %}
     </body>
 </html>

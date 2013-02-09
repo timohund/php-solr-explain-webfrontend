@@ -19,7 +19,7 @@
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
         "kriswallsmith/assetic": "1.1.*@dev",
-		"ts/solr-explain-php": "*",
+		"ts/solr-explain-php": "dev-master",
 		"ob/highcharts-bundle": "dev-master"
     },
     "scripts": {
