@@ -1,7 +1,21 @@
+<!doctype html>
 <html>
+    <head>
+        <link rel="stylesheet" href="{{ asset('bundles/tsexplain/css/main') }}" />
+    </head>
+    <div class="main">
+        <div class="inner">
+            <div class="content">
+                <h1>Solr explain</h1>
 
-    <form action="explain" method="post">
-        <textarea name="content" rows="30" cols="80"></textarea>
-        <input type="submit" />
-    </form>
+                <p>Please put your xml response with explain output into the following form
+                    and submit it to get an detailed explain output for your result.</p>
+
+            </div>
+            <form action="explain" method="post" class="explain">
+                <textarea name="content" rows="30" cols="80"></textarea>
+                <input type="submit" />
+            </form>
+        </div>
+    </div>
 </html>
