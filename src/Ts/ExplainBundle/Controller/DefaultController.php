@@ -52,13 +52,14 @@ class DefaultController extends Controller {
 				$ob->plotOptions->pie(array(
 					'allowPointSelect'  => true,
 					'cursor'    => 'pointer',
-					'dataLabels'    => array('enabled' => false),
-					'showInLegend'  => true
+					'dataLabels'    => array('enabled' => true),
+					'showInLegend'  => true,
 				));
 
 				$data = array();
 				foreach($impacts as $key => $impact) {
-					$data[] = array($key, $impact);
+					$impact =  round($impact,2);
+					$data[] = array( $key, $impact, 'foo' );
 				}
 
 				$ob->series(array(array('type' => 'pie','name' => 'Relevance impact', 'data' => $data)));
@@ -70,7 +71,10 @@ class DefaultController extends Controller {
 
 			return $this->render(
 				'TsExplainBundle:Default:explain.html.twig',
-				array('documents' => $explainDocuments)
+				array(
+					'documents' => $explainDocuments,
+					'result' => $result
+				)
 			);
 		}
 	}

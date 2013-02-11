@@ -26,12 +26,16 @@ div.inner {
     margin: 20px;
 }
 
+div.fieldlist table {
+    border: solid 1px;
+}
+
 div.content {
     text-align: left;
 }
 
-div.explain {
-    font-size: 10px;
+div.explain pre{
+    font-size: 9px;
 }
 
 h1 {
